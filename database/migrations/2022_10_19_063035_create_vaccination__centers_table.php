@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('vaccination__centers', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 128);
+            $table->unsignedBigInteger('available');
+            $table->unsignedBigInteger('enabled')->default(1);
+            $table->foreignId('upazila_id');
+            $table->foreignId('vaccine_id');
             $table->timestamps();
         });
     }

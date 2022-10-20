@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('upazilas', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 128);
+            $table->foreignId('district_id');
             $table->timestamps();
         });
     }
