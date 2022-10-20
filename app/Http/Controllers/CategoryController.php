@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.category.index')->with('categories', Category::paginate());
     }
 
     /**
