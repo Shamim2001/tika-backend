@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('divisions', function (Blueprint $table) {
             $table->id();
             $table->string('name', 128);
+            $table->unsignedBigInteger( 'enabled' )->default( 1 );
             $table->timestamps();
         });
     }
