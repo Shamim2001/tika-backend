@@ -14,7 +14,7 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.division.index')->with('divisions', Division::paginate());
     }
 
     /**
@@ -81,5 +81,16 @@ class DivisionController extends Controller
     public function destroy(Division $division)
     {
         //
+    }
+
+    // Divistion Enable Desible Function
+    public function enableDesible(Division $division, $id)
+    {
+        $division = Division::findOrFail( $id);
+
+        $division->enabled = !$division->enabled;
+        $division->save();
+
+        return redirect()->route('division.index')->with('success', 'Division is achieved');
     }
 }

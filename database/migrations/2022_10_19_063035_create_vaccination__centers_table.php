@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vaccination__centers', function (Blueprint $table) {
+        Schema::create('vaccination_centers', function (Blueprint $table) {
             $table->id();
             $table->string('name', 128);
             $table->unsignedBigInteger('available');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vaccination__centers');
+        Schema::dropIfExists('vaccination_centers');
     }
 };
