@@ -57,7 +57,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('backend.category.edit')->with('category', $category);
     }
 
     /**
@@ -69,7 +69,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'min_age' => 'required'
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'min_age' => $request->min_age
+        ]);
+
+        return redirect()->route('category.index')->with('success', 'updated');
     }
 
     /**

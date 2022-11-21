@@ -20,7 +20,7 @@
                                 <td class="border-l border-t px-2 py-1 text-center">{{ $category->name }}</td>
                                 <td class="border-l border-t px-2 py-1 text-center">{{ $category->min_age }}</td>
                                 <td class="border-l border-t px-2 py-1 text-center">
-                                    <a href="">edit</a>
+                                    <a href="{{ route('category.edit', $category) }}" class="text-white text-sm px-2 py-1 mr-2 rounded bg-green-500 hover:bg-transparent hover:text-black border  duration-300">edit</a>
                                 </td>
                             </tr>
                         @endforeach
